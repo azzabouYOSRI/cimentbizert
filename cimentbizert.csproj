@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,8 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>cimentbizert.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -71,69 +70,22 @@
     <Compile Include="ajt.Designer.cs">
       <DependentUpon>ajt.cs</DependentUpon>
     </Compile>
-    <Compile Include="bulletinagent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bulletinagent.Designer.cs">
-      <DependentUpon>bulletinagent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="bulletinemp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="bulletinemp.Designer.cs">
-      <DependentUpon>bulletinemp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="cimentDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>cimentDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="listemp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="listemp.Designer.cs">
-      <DependentUpon>listemp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="recherche.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="recherche.Designer.cs">
-      <DependentUpon>recherche.cs</DependentUpon>
-    </Compile>
     <Compile Include="modif.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modif.Designer.cs">
       <DependentUpon>modif.cs</DependentUpon>
     </Compile>
-    <Compile Include="somme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="somme.Designer.cs">
-      <DependentUpon>somme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="suprimer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="suprimer.Designer.cs">
-      <DependentUpon>suprimer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ajt.resx">
       <DependentUpon>ajt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bulletinagent.resx">
-      <DependentUpon>bulletinagent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="bulletinemp.resx">
-      <DependentUpon>bulletinemp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="listemp.resx">
-      <DependentUpon>listemp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="recherche.resx">
-      <DependentUpon>recherche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modif.resx">
       <DependentUpon>modif.cs</DependentUpon>
@@ -147,23 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="somme.resx">
-      <DependentUpon>somme.cs</DependentUpon>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="suprimer.resx">
-      <DependentUpon>suprimer.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="cimentDataSet.xsc">
-      <DependentUpon>cimentDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="cimentDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>cimentDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="cimentDataSet.xss">
-      <DependentUpon>cimentDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
