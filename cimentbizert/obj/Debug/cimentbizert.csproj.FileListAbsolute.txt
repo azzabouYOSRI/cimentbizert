@@ -1,0 +1,13 @@
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.csproj.AssemblyReference.cache
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.csproj.SuggestedBindingRedirects.cache
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.ajt.resources
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.Properties.Resources.resources
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.csproj.GenerateResource.cache
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.csproj.CoreCompileInputs.cache
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\bin\Debug\cimentbizert.exe.config
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\bin\Debug\cimentbizert.exe
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\bin\Debug\cimentbizert.pdb
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.exe
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.pdb
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.modif.resources
+C:\Users\YOSRI AZABOU\source\repos\cimentbizert\obj\Debug\cimentbizert.test.resources
