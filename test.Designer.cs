@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox result;
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -36,7 +35,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.months = new System.Windows.Forms.TextBox();
             this.years = new System.Windows.Forms.TextBox();
-            this.supp = new System.Windows.Forms.Button();
+            this.CALC = new System.Windows.Forms.Button();
             this.consulteremp = new System.Windows.Forms.Button();
             this.consulteragent = new System.Windows.Forms.Button();
             this.ajouter = new System.Windows.Forms.Button();
@@ -76,16 +75,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            result = new System.Windows.Forms.TextBox();
+            this.resultset = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // result
-            // 
-            result.Location = new System.Drawing.Point(840, 272);
-            result.Name = "result";
-            result.Size = new System.Drawing.Size(51, 20);
-            result.TabIndex = 123;
             // 
             // dataGridView1
             // 
@@ -146,14 +138,15 @@
             this.years.Size = new System.Drawing.Size(72, 20);
             this.years.TabIndex = 121;
             // 
-            // supp
+            // CALC
             // 
-            this.supp.Location = new System.Drawing.Point(827, 228);
-            this.supp.Name = "supp";
-            this.supp.Size = new System.Drawing.Size(75, 23);
-            this.supp.TabIndex = 120;
-            this.supp.Text = "calculer";
-            this.supp.UseVisualStyleBackColor = true;
+            this.CALC.Location = new System.Drawing.Point(827, 228);
+            this.CALC.Name = "CALC";
+            this.CALC.Size = new System.Drawing.Size(75, 23);
+            this.CALC.TabIndex = 120;
+            this.CALC.Text = "calculer";
+            this.CALC.UseVisualStyleBackColor = true;
+            this.CALC.Click += new System.EventHandler(this.supp_Click);
             // 
             // consulteremp
             // 
@@ -213,6 +206,7 @@
             this.getmat.Name = "getmat";
             this.getmat.Size = new System.Drawing.Size(100, 20);
             this.getmat.TabIndex = 114;
+            this.getmat.TextChanged += new System.EventHandler(this.getmat_TextChanged);
             // 
             // getbtn
             // 
@@ -354,6 +348,7 @@
             this.etatc.Name = "etatc";
             this.etatc.Size = new System.Drawing.Size(100, 20);
             this.etatc.TabIndex = 96;
+            this.etatc.TextChanged += new System.EventHandler(this.etatc_TextChanged);
             // 
             // nenfant
             // 
@@ -484,19 +479,26 @@
             this.label1.TabIndex = 81;
             this.label1.Text = "nom";
             // 
+            // resultset
+            // 
+            this.resultset.Location = new System.Drawing.Point(816, 272);
+            this.resultset.Name = "resultset";
+            this.resultset.Size = new System.Drawing.Size(100, 20);
+            this.resultset.TabIndex = 128;
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 628);
+            this.Controls.Add(this.resultset);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
-            this.Controls.Add(result);
             this.Controls.Add(this.months);
             this.Controls.Add(this.years);
-            this.Controls.Add(this.supp);
+            this.Controls.Add(this.CALC);
             this.Controls.Add(this.consulteremp);
             this.Controls.Add(this.consulteragent);
             this.Controls.Add(this.ajouter);
@@ -554,7 +556,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox months;
         private System.Windows.Forms.TextBox years;
-        private System.Windows.Forms.Button supp;
+        private System.Windows.Forms.Button CALC;
         private System.Windows.Forms.Button consulteremp;
         private System.Windows.Forms.Button consulteragent;
         private System.Windows.Forms.Button ajouter;
@@ -594,5 +596,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox resultset;
     }
 }

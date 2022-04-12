@@ -697,10 +697,14 @@ namespace cimentbizert
             {
                 j = int.Parse(months.Text);
                 month = 1;
+                MessageBox.Show("feragh", "Attention",
+      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 month = 12;
+                MessageBox.Show("m3abi", "Attention",
+      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             do
             {

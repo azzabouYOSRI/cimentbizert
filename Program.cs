@@ -16,7 +16,7 @@ namespace cimentbizert
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ajt());
+            Application.Run(new test());
         }
     }
 }
