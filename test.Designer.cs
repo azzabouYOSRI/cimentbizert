@@ -34,7 +34,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.months = new System.Windows.Forms.TextBox();
-            this.years = new System.Windows.Forms.TextBox();
+            this.year_somme = new System.Windows.Forms.TextBox();
             this.CALC = new System.Windows.Forms.Button();
             this.consulteremp = new System.Windows.Forms.Button();
             this.consulteragent = new System.Windows.Forms.Button();
@@ -131,12 +131,12 @@
             this.months.Size = new System.Drawing.Size(51, 20);
             this.months.TabIndex = 122;
             // 
-            // years
+            // year_somme
             // 
-            this.years.Location = new System.Drawing.Point(830, 146);
-            this.years.Name = "years";
-            this.years.Size = new System.Drawing.Size(72, 20);
-            this.years.TabIndex = 121;
+            this.year_somme.Location = new System.Drawing.Point(830, 146);
+            this.year_somme.Name = "year_somme";
+            this.year_somme.Size = new System.Drawing.Size(72, 20);
+            this.year_somme.TabIndex = 121;
             // 
             // CALC
             // 
@@ -497,7 +497,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.months);
-            this.Controls.Add(this.years);
+            this.Controls.Add(this.year_somme);
             this.Controls.Add(this.CALC);
             this.Controls.Add(this.consulteremp);
             this.Controls.Add(this.consulteragent);
@@ -555,7 +555,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox months;
-        private System.Windows.Forms.TextBox years;
+        private System.Windows.Forms.TextBox year_somme;
         private System.Windows.Forms.Button CALC;
         private System.Windows.Forms.Button consulteremp;
         private System.Windows.Forms.Button consulteragent;

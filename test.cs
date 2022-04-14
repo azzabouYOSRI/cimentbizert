@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.OleDb;
+using System.Globalization;
 // using System.Globalization;
 
 namespace cimentbizert
@@ -18,7 +20,7 @@ namespace cimentbizert
 
         SqlConnection cnx = new SqlConnection
         {
-            ConnectionString = @"Data Source=yosri;Initial Catalog=ciment;Integrated Security=True"
+            ConnectionString = @"Data Source=yosri;Initial Catalog=CLIMENTb;Integrated Security=True"
         };
         SqlCommand cmd = new SqlCommand();
         public void Deconncter()
@@ -31,14 +33,14 @@ namespace cimentbizert
 
         public Boolean alpahbet(string ch)
         {
-            Boolean bol= true;
+            Boolean bolb = true;
             int i=0;
             do
-            {i++;
-                for (int j = 'a'; j <= 'z'; j++)
-                    if (ch[i] == j) { bol = false; break; }
-            } while (i < ch.Length);
-            return bol;
+            {
+                if (!char.IsLetter(ch[i])) { bolb = false; }
+                else { i++; }   
+            } while (i+1 < ch.Length && bolb);
+            return bolb;
         }
 
         DataTable table = new DataTable();
@@ -152,7 +154,7 @@ namespace cimentbizert
 
         private void consulteremp_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(getmat.Text))
+            if (string.IsNullOrEmpty(getmat.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,7 +184,7 @@ namespace cimentbizert
 
         private void consulteragent_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(getmat.Text))
+            if (string.IsNullOrEmpty(getmat.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -211,7 +213,7 @@ namespace cimentbizert
 
         private void getbtn_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(getmat.Text))
+            if (string.IsNullOrEmpty(getmat.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -265,18 +267,16 @@ namespace cimentbizert
             int grad1;
             int nbrenf1;
             int numt1;
-            int year1;
-            int month1;
-            int day1;
             bool b = true;
+            DateTime dt;
 
             if (nom == "" || prenom == "" || matt == "" || idn == "" || codec == "" || datenais == "" || nconj == "" || grad == "" || nbrenf == "" || ecivil == "" || adress == "" || numt == "" || matt == "")
             {
                 erreur = true;
                 MessageBox.Show("Veuillez remplir tous les champs de la formulaire", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (!int.TryParse(matt, out matt1) || !int.TryParse(idn, out idn1) || !int.TryParse(codec, out codec1) || !int.TryParse(grad, out grad1) || !int.TryParse(nbrenf, out nbrenf1) || !int.TryParse(year.Text, out year1) || !int.TryParse(month.Text, out month1) || !int.TryParse(day.Text, out day1)
-                || !alpahbet(nom) || !alpahbet(prenom) || !alpahbet(nconj) || !alpahbet(pconj) || !alpahbet(ecivil) || !alpahbet(adress))
+            else if (!int.TryParse(matt, out matt1) || !int.TryParse(idn, out idn1) || !int.TryParse(codec, out codec1) || !int.TryParse(grad, out grad1) || !int.TryParse(nbrenf, out nbrenf1) || !int.TryParse(numt, out numt1)
+                || !alpahbet(nom) || !alpahbet(prenom) || !alpahbet(nconj) || !alpahbet(pconj) || !alpahbet(ecivil) || !alpahbet(adress) || !DateTime.TryParse(datenais, out dt))
             {
 
                 erreur = true;
@@ -369,7 +369,7 @@ namespace cimentbizert
 
         private void suprimer_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(getmat.Text))
+            if (string.IsNullOrEmpty(getmat.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -410,10 +410,8 @@ namespace cimentbizert
             int grad1;
             int nbrenf1;
             int numt1;
-            int year1;
-            int month1;
-            int day1;
-            if (!string.IsNullOrEmpty(getmat.Text))
+            DateTime dt;
+            if (string.IsNullOrEmpty(getmat.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -496,10 +494,11 @@ namespace cimentbizert
                             cnx.Close();
                         }
                 }
+                    string datenais = year.Text + "-" + month.Text + "-" + day.Text;
 
-                if (!string.IsNullOrEmpty(year.Text) && !string.IsNullOrEmpty(month.Text) && !string.IsNullOrEmpty(day.Text))
+                    if (!string.IsNullOrEmpty(year.Text) && !string.IsNullOrEmpty(month.Text) && !string.IsNullOrEmpty(day.Text))
                 {
-                        if (!int.TryParse(year.Text, out year1) || !int.TryParse(month.Text, out month1) || !int.TryParse(day.Text, out day1))
+                        if (!DateTime.TryParse(datenais, out dt))
                         {
                             MessageBox.Show("Ce champ accept les chiifre unisuement", "Attention",
         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -734,20 +733,19 @@ namespace cimentbizert
 
         private void supp_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(CALC.Text))
+            if (string.IsNullOrEmpty(CALC.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else { 
-            string x = "h";
+            string x = "";
             float value;
             int j = 0;
             int month;
             double sommes = 0;
-            string zeph = "";
-            string date;
-            int year = int.Parse(years.Text);
+            string sdate;
+            int year = int.Parse(year_somme.Text);
             if (!string.IsNullOrEmpty(months.Text))
             {
                 j = int.Parse(months.Text);
@@ -761,74 +759,20 @@ namespace cimentbizert
                 MessageBox.Show("m3abi", "Attention",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //do
-            // {
-            j++;
 
-            int numDays = 0;
-            switch (j)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    numDays = 31;
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    numDays = 30;
-                    break;
-                case 2:
-                    if (((year % 4 == 0) &&
-                         !(year % 100 == 0))
-                         || (year % 400 == 0))
-                        numDays = 29;
-                    else
-                        numDays = 28;
-                    break;
-            }
-            switch (j)
-            {
-                case 1: zeph = "JAN"; break;
-                case 2: zeph = "FEB"; break;
-                case 3: zeph = "MAR"; break;
-                case 4: zeph = "APR"; break;
-                case 5: zeph = "MAY"; break;
-                case 6: zeph = "JUN"; break;
-                case 7: zeph = "JUL"; break;
-                case 8: zeph = "AUG"; break;
-                case 9: zeph = "SEP"; break;
-                case 10: zeph = "OCT"; break;
-                case 11: zeph = "NOV"; break;
-                case 12: zeph = "DEC"; break;
+                DataTable table_raw = new DataTable();
+                cnx.Open();
+                DateTime date = DateTime.ParseExact(year_somme.Text, "yyyy", CultureInfo.InvariantCulture);
+                string dt2 = date.ToString("yyyy");
+                cmd = new SqlCommand("select frais from bulletin where year(date_Depot)= '" + dt2 + "'", cnx);
+                Reader = cmd.ExecuteReader();
+                table_raw.Load(Reader);
+                //dataGridView1.DataSource = table_raw;
+                Decimal Totalfrais = Convert.ToDecimal(table.Compute("SUM(frais)", string.Empty));
 
-            }
-            // for (int i = 0; i < numDays; i++)
-            // {
-            Deconncter();
-            cnx.Open();
-            date = "'" + year + "-" + zeph + "-" + "";
-            //string my = "select frais  from bulletin WHERE depot = '" + date + "'";
-            string my = "select cin  from employee WHERE matricule = 111 ";
-            cmd = new SqlCommand(my, cnx);
-            Reader = cmd.ExecuteReader();
-            while (Reader.Read())
-            {
 
-                x = Reader[0].ToString();
-            }
-            float.TryParse(x, out value);
-            sommes = sommes + (value * 0.3);
-            cnx.Close();
-            //}
-            //} while (j <= month);
-            x = sommes + "test";
-            resultset.Text = date;
+               x = Convert.ToString(Totalfrais);
+            resultset.Text = x;
         }
     }
 
