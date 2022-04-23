@@ -1,6 +1,6 @@
 ﻿namespace cimentbizert
 {
-    partial class test
+    partial class admina
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.year_somme = new System.Windows.Forms.TextBox();
             this.CALC = new System.Windows.Forms.Button();
             this.consulteremp = new System.Windows.Forms.Button();
-            this.consulteragent = new System.Windows.Forms.Button();
+            this.consultebulletin = new System.Windows.Forms.Button();
             this.ajouter = new System.Windows.Forms.Button();
             this.suprimer = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.resultset = new System.Windows.Forms.TextBox();
+            this.imprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(851, 98);
+            this.label19.Location = new System.Drawing.Point(849, 105);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 127;
@@ -140,55 +141,70 @@
             // 
             // CALC
             // 
+            this.CALC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.CALC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CALC.ForeColor = System.Drawing.Color.White;
             this.CALC.Location = new System.Drawing.Point(827, 228);
             this.CALC.Name = "CALC";
             this.CALC.Size = new System.Drawing.Size(75, 23);
             this.CALC.TabIndex = 120;
             this.CALC.Text = "calculer";
-            this.CALC.UseVisualStyleBackColor = true;
+            this.CALC.UseVisualStyleBackColor = false;
             this.CALC.Click += new System.EventHandler(this.supp_Click);
             // 
             // consulteremp
             // 
+            this.consulteremp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.consulteremp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.consulteremp.ForeColor = System.Drawing.Color.White;
             this.consulteremp.Location = new System.Drawing.Point(468, 54);
             this.consulteremp.Name = "consulteremp";
             this.consulteremp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.consulteremp.Size = new System.Drawing.Size(131, 23);
             this.consulteremp.TabIndex = 119;
             this.consulteremp.Text = "consulter par employee";
-            this.consulteremp.UseVisualStyleBackColor = true;
+            this.consulteremp.UseVisualStyleBackColor = false;
             this.consulteremp.Click += new System.EventHandler(this.consulteremp_Click);
             // 
-            // consulteragent
+            // consultebulletin
             // 
-            this.consulteragent.Location = new System.Drawing.Point(605, 52);
-            this.consulteragent.Name = "consulteragent";
-            this.consulteragent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.consulteragent.Size = new System.Drawing.Size(131, 23);
-            this.consulteragent.TabIndex = 118;
-            this.consulteragent.Text = "consulter par agent";
-            this.consulteragent.UseVisualStyleBackColor = true;
-            this.consulteragent.Click += new System.EventHandler(this.consulteragent_Click);
+            this.consultebulletin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.consultebulletin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.consultebulletin.ForeColor = System.Drawing.Color.White;
+            this.consultebulletin.Location = new System.Drawing.Point(605, 52);
+            this.consultebulletin.Name = "consultebulletin";
+            this.consultebulletin.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.consultebulletin.Size = new System.Drawing.Size(131, 23);
+            this.consultebulletin.TabIndex = 118;
+            this.consultebulletin.Text = "consulter tout les buletin";
+            this.consultebulletin.UseVisualStyleBackColor = false;
+            this.consultebulletin.Click += new System.EventHandler(this.consulteragent_Click);
             // 
             // ajouter
             // 
+            this.ajouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ajouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ajouter.ForeColor = System.Drawing.Color.White;
             this.ajouter.Location = new System.Drawing.Point(646, 320);
             this.ajouter.Name = "ajouter";
             this.ajouter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ajouter.Size = new System.Drawing.Size(75, 23);
             this.ajouter.TabIndex = 117;
             this.ajouter.Text = "ajouter";
-            this.ajouter.UseVisualStyleBackColor = true;
+            this.ajouter.UseVisualStyleBackColor = false;
             this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
             // 
             // suprimer
             // 
+            this.suprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.suprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.suprimer.ForeColor = System.Drawing.Color.White;
             this.suprimer.Location = new System.Drawing.Point(546, 320);
             this.suprimer.Name = "suprimer";
             this.suprimer.Size = new System.Drawing.Size(75, 23);
             this.suprimer.TabIndex = 116;
             this.suprimer.Text = "suprimer";
-            this.suprimer.UseVisualStyleBackColor = true;
+            this.suprimer.UseVisualStyleBackColor = false;
             this.suprimer.Click += new System.EventHandler(this.suprimer_Click);
             // 
             // label15
@@ -210,12 +226,17 @@
             // 
             // getbtn
             // 
+            this.getbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.getbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.getbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.getbtn.ForeColor = System.Drawing.Color.White;
             this.getbtn.Location = new System.Drawing.Point(330, 54);
             this.getbtn.Name = "getbtn";
             this.getbtn.Size = new System.Drawing.Size(120, 23);
             this.getbtn.TabIndex = 113;
             this.getbtn.Text = "recherche employee";
-            this.getbtn.UseVisualStyleBackColor = true;
+            this.getbtn.UseMnemonic = false;
+            this.getbtn.UseVisualStyleBackColor = false;
             this.getbtn.Click += new System.EventHandler(this.getbtn_Click);
             // 
             // label13
@@ -255,12 +276,15 @@
             // 
             // updatebtn
             // 
+            this.updatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.updatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updatebtn.ForeColor = System.Drawing.Color.White;
             this.updatebtn.Location = new System.Drawing.Point(445, 320);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(75, 23);
             this.updatebtn.TabIndex = 108;
             this.updatebtn.Text = "update";
-            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.UseVisualStyleBackColor = false;
             this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // bb
@@ -428,7 +452,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(149, 304);
+            this.label6.Location = new System.Drawing.Point(149, 306);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 13);
             this.label6.TabIndex = 86;
@@ -486,11 +510,26 @@
             this.resultset.Size = new System.Drawing.Size(100, 20);
             this.resultset.TabIndex = 128;
             // 
-            // test
+            // imprimer
+            // 
+            this.imprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.imprimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.imprimer.ForeColor = System.Drawing.Color.White;
+            this.imprimer.Location = new System.Drawing.Point(748, 53);
+            this.imprimer.Name = "imprimer";
+            this.imprimer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.imprimer.Size = new System.Drawing.Size(131, 23);
+            this.imprimer.TabIndex = 129;
+            this.imprimer.Text = "imprimer une bulletin";
+            this.imprimer.UseVisualStyleBackColor = false;
+            // 
+            // admina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(1079, 628);
+            this.Controls.Add(this.imprimer);
             this.Controls.Add(this.resultset);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
@@ -500,7 +539,7 @@
             this.Controls.Add(this.year_somme);
             this.Controls.Add(this.CALC);
             this.Controls.Add(this.consulteremp);
-            this.Controls.Add(this.consulteragent);
+            this.Controls.Add(this.consultebulletin);
             this.Controls.Add(this.ajouter);
             this.Controls.Add(this.suprimer);
             this.Controls.Add(this.label15);
@@ -539,7 +578,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "test";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "admina";
             this.Text = "test";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -558,7 +598,7 @@
         private System.Windows.Forms.TextBox year_somme;
         private System.Windows.Forms.Button CALC;
         private System.Windows.Forms.Button consulteremp;
-        private System.Windows.Forms.Button consulteragent;
+        private System.Windows.Forms.Button consultebulletin;
         private System.Windows.Forms.Button ajouter;
         private System.Windows.Forms.Button suprimer;
         private System.Windows.Forms.Label label15;
@@ -597,5 +637,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox resultset;
+        private System.Windows.Forms.Button imprimer;
     }
 }

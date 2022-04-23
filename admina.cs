@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace cimentbizert
 {
-    public partial class test : Form
+    public partial class admina : Form
     {
 
 
@@ -72,7 +72,7 @@ namespace cimentbizert
             }
             else if (x == 3)
             {
-                cmd = new SqlCommand("select * from bulletin WHERE agent   = '" + getmat.Text + "' ", cnx);
+                cmd = new SqlCommand("select * from bulletin ", cnx);
                 Reader = cmd.ExecuteReader();
                 table2.Load(Reader);
                 dataGridView1.DataSource = table2;
@@ -93,7 +93,7 @@ namespace cimentbizert
             }
         }
 
-        public test()
+        public admina()
         {
             InitializeComponent();
             Remplir(4);
@@ -184,31 +184,14 @@ namespace cimentbizert
 
         private void consulteragent_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(getmat.Text))
-            {
-                MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
-               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (Trouver(2) == 0)
-                {
-                    MessageBox.Show("Ce numéro d'agent n'existe pas!", "Attention",
-           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                else
-                {
+            
                     Deconncter();
                     cnx.Open();
                     table.Clear();
-                    Remplir(2);
+                    Remplir(3);
                     Reinitialisation();
                     cnx.Close();
-                    //b = true;
-
-                }
-            }
+                
         }
 
         private void getbtn_Click(object sender, EventArgs e)
@@ -235,10 +218,7 @@ namespace cimentbizert
                     Remplir(1);
                     Reinitialisation();
                     cnx.Close();
-                    //b = true;
-
                 }
-
             }
         }
 
@@ -324,13 +304,9 @@ namespace cimentbizert
 
                 if (i != 0)
                 {
-
-
                     MessageBox.Show("Ajout effectué avec succes!", "Bravo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 else
-
                     MessageBox.Show("Probléme d'insertion", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cnx.Close();
                 Reinitialisation();
@@ -360,11 +336,7 @@ namespace cimentbizert
                 Remplir(3);
                 Reinitialisation();
                 cnx.Close();
-                // b = true;
-
             }
-
-
         }
 
         private void suprimer_Click(object sender, EventArgs e)
@@ -733,46 +705,44 @@ namespace cimentbizert
 
         private void supp_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(CALC.Text))
+            if (string.IsNullOrEmpty(year_somme.Text))
             {
                 MessageBox.Show(" champ ne peut pas etre vide !", "Attention",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else { 
-            string x = "";
-            float value;
-            int j = 0;
-            int month;
-            double sommes = 0;
-            string sdate;
-            int year = int.Parse(year_somme.Text);
-            if (!string.IsNullOrEmpty(months.Text))
-            {
-                j = int.Parse(months.Text);
-                month = 1;
-                MessageBox.Show("feragh", "Attention",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                month = 12;
-                MessageBox.Show("m3abi", "Attention",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-                DataTable table_raw = new DataTable();
-                cnx.Open();
-                DateTime date = DateTime.ParseExact(year_somme.Text, "yyyy", CultureInfo.InvariantCulture);
-                string dt2 = date.ToString("yyyy");
-                cmd = new SqlCommand("select frais from bulletin where year(date_Depot)= '" + dt2 + "'", cnx);
-                Reader = cmd.ExecuteReader();
-                table_raw.Load(Reader);
-                //dataGridView1.DataSource = table_raw;
-                Decimal Totalfrais = Convert.ToDecimal(table.Compute("SUM(frais)", string.Empty));
-
-
-               x = Convert.ToString(Totalfrais);
-            resultset.Text = x;
+            else {
+                double x;
+                String year = year_somme.Text;
+                if (!string.IsNullOrEmpty(months.Text))
+                {
+                    cnx.Open();
+                    // DateTime date = DateTime.ParseExact(year_somme.Text, "yyyy", CultureInfo.InvariantCulture);
+                    string dt2 = year_somme.Text; //date.ToString("yyyy");
+                    ///  DateTime datem = DateTime.ParseExact(months.Text, "mm", CultureInfo.InvariantCulture);
+                    string dtm2 = months.Text; //datem.ToString("yyyy");
+                    cmd = new SqlCommand("select sum(frais) from bulletin where month(date_Depot)= '" + dtm2 + "' AND year(date_Depot)= '" + dt2 + "'", cnx);                  
+                    
+                    x = (double)(cmd.ExecuteScalar());
+                    string z = x.ToString();
+                    resultset.Text = z;
+                    cnx.Close();
+                    if (string.IsNullOrEmpty(year_somme.Text))
+                    {
+                        MessageBox.Show(" d5al !", "Attention",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    cnx.Open();
+                    DateTime date = DateTime.ParseExact(year_somme.Text, "yyyy", CultureInfo.InvariantCulture);
+                    string dt2 = date.ToString("yyyy");
+                    cmd = new SqlCommand("select sum(frais) from bulletin where year(date_Depot)= '" + dt2 + "'", cnx);
+                    x = (double)(cmd.ExecuteScalar());
+                    string z = x.ToString();
+                    resultset.Text = z;
+                    cnx.Close();    
+                }
         }
     }
 
